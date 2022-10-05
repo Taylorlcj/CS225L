@@ -52,7 +52,7 @@ public class SnakesAndLaddersController {
 
 				// make an array to hold the columns 
 				String[] lineColumns;
-				// break the line up to columns. break on the comma and delete the comma
+				// break the line-up to columns. break on the comma and delete the comma
 				lineColumns = line.split(",");
  
 				// print every line
