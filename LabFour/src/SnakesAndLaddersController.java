@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 
 public class SnakesAndLaddersController {
 	
@@ -12,7 +10,6 @@ public class SnakesAndLaddersController {
 		SnakesAndLaddersController slc = new SnakesAndLaddersController();
 		
 
-		
 		//Running the Program
 		slc.readBoardFromFile();
 		slc.printBoard();
@@ -39,7 +36,7 @@ public class SnakesAndLaddersController {
 		//Then if you wanted to add that place object to the first spot in the array you could
 		
 		board[0] = examplePlaceObject;
-		
+
 		try {
 			FileReader fr = new FileReader(boardFile);
 			BufferedReader br = new BufferedReader(fr);
@@ -48,6 +45,7 @@ public class SnakesAndLaddersController {
 
 			// while line is equal to the next line of the bufferedreader is not equal to null
 			// this means read the next line in the file until there are not more line to read
+			int i = 0;
 			while (  ( line = br.readLine() ) != null     ) {
 
 				// make an array to hold the columns 
@@ -93,15 +91,40 @@ public class SnakesAndLaddersController {
 	}
 	
 	public void changeBoardValues() {
-		
-		
-		
+		for(int i = 0; i < 100; i++)
+		{
+			if(i % 2 == 0)
+			{
+				board[i].setLadder(true);
+			}
+			else
+			{
+				board[i].setLadder(false);
+			}
+
+			board[i].setJumpTo((int) (Math.random() * 20));
+		}
+		board[30].setLadder(true);
+		board[30].setJumpTo(90);
 	}
 	
 	public void saveBoard() {
-		
-		
-		
+		try
+		{
+			File file = new File("UpdatedSnakesAndLaddersBoard.csv");
+			FileOutputStream output = new FileOutputStream(file);
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
+			for(int i = 0; i < 100; i++)
+			{
+				String value = "Place Number: " + board[i].getPlaceNumber() + " Jump to: " + board[i].getJumpTo() + " Is Snake: " + board[i].isSnake() + " Is Ladder " + board[i].isLadder();
+				writer.write(value+"\n");
+			}
+			writer.close();
+		}
+		catch (IOException e)
+		{
+			throw new RuntimeException(e);
+		}
 	}
 	
 
