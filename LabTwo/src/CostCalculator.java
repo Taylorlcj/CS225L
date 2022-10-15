@@ -1,7 +1,7 @@
 // *************************************
 // Class: CostCalculator
-// Author: Jakob Haehre
-// Created: Spe 15, 2022
+// Author: Taylor Jensen
+// Created: Oct 14, 2022
 // Modfied: na
 //
 // Purpose: Calculates costs of truck trips
