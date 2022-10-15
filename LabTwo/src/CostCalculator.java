@@ -17,14 +17,14 @@ public class CostCalculator {
 		int truck1total = totalCost(truck1Capacity,truck1Cost,truck1FuelBurn);
 		System.out.println("Truck 1 total cost: $" + truck1total);
 
-		//Parameters for truck 1
+		//Parameters for truck 2
 		int truck2Capacity = 40;
 		int truck2FuelBurn = 70;
 		int truck2Cost = 13000;
 		int truck2total = totalCost(truck2Capacity,truck2Cost,truck2FuelBurn);
 		System.out.println("Truck 2 total cost: $" + truck2total);
 
-		//Parameters for truck 1
+		//Parameters for truck 3
 		int truck3Capacity = 80;
 		int truck3FuelBurn = 100;
 		int truck3Cost = 20000;
