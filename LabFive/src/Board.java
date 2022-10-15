@@ -21,11 +21,37 @@ public class Board {
 		this.player1 = new Player();
 		this.player2 = new Player();
 	}
-	
-	//Add playTurn method
 
-	
-	//add gameOver method
+	public void playTurn(){
+		System.out.print("Player 1 rolled a ");
+		player1.rollDice();
+		if (player1.getLocation() > 100){
+			player1.setLocation(100);
+		}
+		board[player1.getLocation() - 1].isLandedOn(player1);
+		System.out.println("Player 1 location is: " + player1.getLocation());
+
+		System.out.print("Player 2 rolled a ");
+		player2.rollDice();
+		if (player2.getLocation() > 100){
+			player2.setLocation(100);
+		}
+		board[player2.getLocation() - 1].isLandedOn(player2);
+		System.out.println("PLayer 2 location is: " + player2.getLocation());
+		System.out.println();
+	}
+
+	public boolean gameOver(){
+		if (player1.getLocation()>=100){
+			System.out.println("PLAYER 1 WINS!!!");
+			return true;
+		}
+		if (player2.getLocation()>=100){
+			System.out.println("PLAYER 2 WINS!!!");
+			return true;
+		}
+		return false;
+	}
 	
 	
 	public void readBoardFromFile() {
@@ -45,14 +71,14 @@ public class Board {
 			String line;
 
 			int i = 0;
-			// while line is equal to the next line of the bufferedreader is not equal to null
+			// while line is equal to the next line of the buffered reader is not equal to null
 			// this means read the next line in the file until there are not more line to read
 			while (  ( line = br.readLine() ) != null     ) {
 				
 				int jumpTo = 0;
 				// make an array to hold the columns 
 				String[] lineColumns;
-				// break the line up to columns. break on the comma and delete the comma
+				// break the lineup to columns. break on the comma and delete the comma
 				lineColumns = line.split(",");
 				//this can also be done using an if statement
 				int placeNumber = (int) Double.parseDouble(lineColumns[0]);

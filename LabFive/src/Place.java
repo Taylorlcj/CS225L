@@ -15,9 +15,8 @@ public class Place {
 		this.isLadder = isLadder;
 		
 	}
-	
-	//Add landedOn method
-	public void landedOn(Player player) {
+
+	public void isLandedOn(Player player) {
 		
 		player.setLocation(jumpTo);
 		
