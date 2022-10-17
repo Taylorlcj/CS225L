@@ -1,8 +1,8 @@
 // *************************************
 // Class: RandomDataManager
-// Author: Keith Garfield
-// Created: Jun 16, 2022
-// Modfied: na
+// Author: Taylor Jensen
+// Created: Oct 16, 2022
+// Modified: na
 //
 // Purpose: Creates a RandomData object and manages it
 //
@@ -14,9 +14,7 @@ public class RandomDataController {
 		RandomData rData = new RandomData();
 		
 		rData.createArray(500);
-		rData.printArray();
 		rData.initArray();
-		rData.printArray();
 		
 		System.out.println("The sum of the numbers is " +  rData.calculateSum() );
 		System.out.println("The average value is " + rData.calculateAverage()  );

@@ -1,8 +1,8 @@
 //***********************************************
 // Class: RandomData
-// Author: Keith Garfield
-// Created: Jun 16, 2022
-// Modfied: na
+// Author: Taylor Jensen
+// Created: Oct 16, 2022
+// Modified: yes
 //
 // Purpose: Create and manipulate random numbers
 //
@@ -26,28 +26,49 @@ public class RandomData {
 	// Find the largest
 	public double findMax() {
 		double max = data[0];
-
-		return 0;
+		for (int i = 1; i < data.length; i++)
+		{
+			if (data[i] > max)
+			{
+				max = data[i];
+			}
+		}
+		return max;
 	}
 	
 	// Find the smallest
 	public double findMin() {
 		double min = data[0];
-		
+		for (int i = 1; i < data.length; i++)
+		{
+			if (data[i] < min)
+			{
+				min = data[i];
+			}
+		}
 		return min;
 	}
 
 	// Find how many are above some threshold value, t
 	public int countAboveThreshold( double t )  {
 		int count = 0;
-		
+		for (int i = 0; i < data.length; i++)
+		{
+			if (data[i] > t)
+			{
+				count++;
+			}
+		}
 		return count;
 	}
 	
 	// Find the sum
 	public double calculateSum() {
 		double sum = 0;
-
+		for (int i = 0; i < data.length; i++)
+		{
+			sum += data[i];
+		}
 		return sum;
 	}
 	
