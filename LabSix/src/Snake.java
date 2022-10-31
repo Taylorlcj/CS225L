@@ -7,6 +7,10 @@ public class Snake extends Place {
 		
 	}
 	
-	// override landedOn Method
+	@Override
+	public void landedOn(Player player) {
+		super.landedOn(player);
+		System.out.println("Player landed on a snake and was moved to position " + super.getJumpTo());
+	}
 
 }
