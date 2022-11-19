@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -15,7 +16,18 @@ public class TireManager {
 	}
 	
 	public void serveNextCustomer() {
-		//your code here
+		int currentTire = 0;
+		int radii = customerQueue.poll();
+		ArrayList<Integer> removedTires = new ArrayList<Integer>();
+		currentTire = tireStack.pop();
+		while(currentTire != radii){
+			removedTires.add(currentTire);
+			currentTire = tireStack.pop();
+		}
+		while (!removedTires.isEmpty()){
+			tireStack.push(removedTires.remove(removedTires.size()-1));
+		}
+		System.out.println(tireStack);
 	}
 	
 	public boolean stillCustomers() {
