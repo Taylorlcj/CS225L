@@ -1,0 +1,5 @@
+Valid Favorites: 78
+Invalid Favorites: 4
+Dog Count 10 won by 6
+The total number of Blanks is 282
+The combined amount of Red, Blue, and Yellow entries is 17
